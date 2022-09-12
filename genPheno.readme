@@ -1,13 +1,3 @@
-# genePheno
-## Scripts to make the biomartPheno-file used in annotation of our data
-
-### How to run:
-```sh
-
-
-
-
-```
 Rscript genPheno.r
 dos2unix bioMartPheno.bed
 bgzip bioMartPheno.bed
