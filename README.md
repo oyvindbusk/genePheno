@@ -1,21 +1,21 @@
 # genePheno
 ## Scripts to make the biomartPheno-file used in annotation of our data
 
+### Dependencies:
+* docker
+* bgzip
+* tabix
+
+### Build the docker image like this (when standing in the project directory)
+```sh
+docker build -t genopheno .
+```
+
 ### How to run:
 ```sh
-
-
-
-
+sh run_pheno.sh
 ```
-Rscript genPheno.r
-dos2unix bioMartPheno.bed
-bgzip bioMartPheno.bed
-tabix -p bed bioMartPheno.bed.gz
+This creates a file biomartPheno that contains phenotypes for most genes. Multiple phenotypes are separated by ||. This file is used in our pipeline to annotate phenotypes on genes.
 
-And then I use the following settings in vcfanno to annotate:
-[[annotation]]
-file="bioMartPheno.bed.gz"
-columns = [5]
-ops=["self"]
-names=["Pheno_GENE"]
+### Example:
+An example output file can be found in the example-folder
