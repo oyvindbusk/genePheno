@@ -7,7 +7,7 @@ if [ -f bioMartPheno.bed.gz ]; then
 fi
 }
 
-docker run -it --rm -v $PWD:/outdir genepheno /bin/bash -c "Rscript scriptdir/genPheno_hg37.r"
+docker run -it --rm -v $PWD:/outdir genopheno /bin/bash -c "Rscript scriptdir/genPheno_hg37.r"
 #dos2unix bioMartPheno.bed
 bgzip bioMartPheno.bed
 tabix -p bed bioMartPheno.bed.gz
